@@ -1,12 +1,16 @@
 (function () {
   var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('@feizheng/next-js-core2');
-  var DEFAULT_OPTIONS = { persuade: 'checked', path: 'dataset.value' };
+  var nx = global.nx || require('@jswork/next');
+  var DEFAULT_OPTIONS = {
+    context: global.document,
+    persuade: 'checked',
+    tag: 'input',
+    path: 'dataset.value'
+  };
 
-  nx.activeValue = function (inElement, inOptions) {
+  nx.activeValue = function (inOptions) {
     var options = nx.mix(null, DEFAULT_OPTIONS, inOptions);
-    if (!inElement) return [];
-    var elements = inElement.querySelectorAll('input:' + options.persuade);
+    var elements = options.context.querySelectorAll(options.tag + ':' + options.persuade);
     var els = nx.slice(elements);
     return els.map(function (el) {
       return nx.get(el, options.path);

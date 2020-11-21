@@ -3,7 +3,7 @@
  * description: Get active element value.
  * homepage: https://github.com/afeiship/next-active-value
  * version: 1.0.0
- * date: 2020-11-21 11:15:38
+ * date: 2020-11-21 11:16:25
  * license: MIT
  */
 
